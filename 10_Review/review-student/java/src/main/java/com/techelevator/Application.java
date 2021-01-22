@@ -1,6 +1,12 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Application {
+
+    private List<Department> departments = new ArrayList<>();
+
 
     /**
      * The main entry point in the application
@@ -13,10 +19,22 @@ public class Application {
 
     private void run() {
         // create some departments
-        createDepartments();
+        createDepartments() {
+
+            departments.add(new Department(1, "Marketing"));
+
+            departments.add(new Department(2, "Sales"));
+
+            Department departmentAddVariable = new Department(3, "Engineering");
+            departments.add(departmentAddVariable);
+
+        }
 
         // print each department by name
-        printDepartments();
+        printDepartments(){
+            // create for each loop, run thorugh list, print each list.getName()
+
+        }
 
         // create employees
         createEmployees();

@@ -69,7 +69,7 @@ public class Application {
         departments.add(new Department(2, "Sales"));
 
         Department departmentAddVariable = new Department(3, "Engineering");
-        departments.add(departmentAddVariable);
+        departments.add(departmentAddVariable);  // long hand way to say line 69
 
     }
 
@@ -88,14 +88,14 @@ public class Application {
      * Create employees and add them to the collection of employees
      */
     private void createEmployees() {
-        Employee employee = new Employee();
-        employee.setEmployeeID(1);
-        employee.setFirstName("Dean");
-        employee.setLastName("Johnson");
-        employee.setEmail("djohnson@teams.com");
-        employee.setDepartment(departments.get(2));
-        employee.setHireDate("08/21/2020");
-        employees.add(employee);
+        Employee employeeBlank = new Employee();
+        employeeBlank.setEmployeeID(1);
+        employeeBlank.setFirstName("Dean");
+        employeeBlank.setLastName("Johnson");
+        employeeBlank.setEmail("djohnson@teams.com");
+        employeeBlank.setDepartment(departments.get(2));
+        employeeBlank.setHireDate("08/21/2020");
+        employees.add(employeeBlank);
 
         employees.add(new Employee(2, "Angie", "Smith",
                 "asmith@teams.com", departments.get(2),"08/21/2020"));
@@ -126,9 +126,8 @@ public class Application {
         Project projectOne = new Project("TEams", "Project Management",
                 "10/10/2020", "11/10/2020");
 
-
         for (Employee employeeVar : employees) {
-            if (departments.get(2).equals(employeeVar.getDepartment())) {
+            if (departments.get(2).equals( employeeVar.getDepartment() ) ) {
                 projectOne.setTeamMembers(employeeVar);
             }
         }
@@ -158,8 +157,11 @@ public class Application {
      */
     private void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
-        for (Map.Entry<String,Project> thingie : projects.entrySet()) {
-            System.out.println(thingie.getKey() + ": " + thingie.getValue().getTeamMembers().size());
+
+        // for each loop with MAPS!!!!!!
+
+        for (Map.Entry<String,Project> entryVar : projects.entrySet()) {
+            System.out.println(entryVar.getKey() + ": " + entryVar.getValue().getTeamMembers().size());
         }
     }
 

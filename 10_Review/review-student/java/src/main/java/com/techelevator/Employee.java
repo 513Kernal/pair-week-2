@@ -94,6 +94,9 @@ public class Employee {
         this.salary = STARTING_SALARY;
     }
 
+    //  an example -->Employee blank = new Employee();
+
+
 
         //****METHODS****
 
